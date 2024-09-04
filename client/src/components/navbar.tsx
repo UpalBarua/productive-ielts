@@ -1,4 +1,4 @@
-import { MobileNav } from "@/components/ui/mobile-nav";
+import { MobileNav } from "@/components/mobile-nav";
 import { navLinks } from "@/config";
 import { IconVocabulary } from "@tabler/icons-react";
 import Link from "next/link";
