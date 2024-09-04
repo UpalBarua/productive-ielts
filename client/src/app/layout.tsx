@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -9,8 +9,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={raleway.className}>
+      <body className="bg-background text-foreground antialiased min-h-screen">
+        {children}
+      </body>
     </html>
   );
 }
