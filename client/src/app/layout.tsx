@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/navbar";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={raleway.className}>
       <body className="bg-background text-foreground antialiased min-h-screen">
+        <Navbar />
         {children}
       </body>
     </html>
