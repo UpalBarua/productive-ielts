@@ -17,11 +17,11 @@
     --muted: 285 100% 98%;
     --muted-foreground: 285 75% 96%;
     --accent: 285 100% 98%;
-    --accent-foreground: 285 75% 96%;
+    --accent-foreground: 285, 100%, 5%;
     --destructive: 345 94% 40%;
     --destructive-foreground: 285 75% 96%;
     --border: 285, 40%, 88%;
-    --input: 285, 40%, 88%%;
+    --input: 285, 40%, 88%;
     --ring: 285, 100%, 5%;
     --radius: 0.675rem;
   }
