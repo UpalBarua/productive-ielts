@@ -48,7 +48,7 @@ const AboutUs = () => {
     },
   ];
   return (
-    <section className="mx-auto mb-14 mt-24 max-w-7xl">
+    <section className="container mb-14 mt-24">
       <div className="flex flex-col items-center gap-24 lg:flex-row">
         <div className="ml-2 flex-1 lg:ml-8">
           <h4 className="pb-4 text-primary">What we think</h4>

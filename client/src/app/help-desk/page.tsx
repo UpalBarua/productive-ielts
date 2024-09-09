@@ -34,7 +34,7 @@ const HelpDesk = () => {
     console.log(data);
   };
   return (
-    <section className="mx-auto mt-24 max-w-5xl">
+    <section className="container mt-24">
       <div className="relative m-10 rounded-lg shadow">
         <div className="ml-2 lg:ml-8">
           <h1 className="border-l-2 p-2 text-3xl font-bold text-primary">
@@ -50,7 +50,7 @@ const HelpDesk = () => {
           >
             <div className="grid grid-cols-6 gap-6">
               <div className="col-span-6 sm:col-span-3">
-                <label className="text-white mb-2 flex items-center gap-3 text-[15px] font-medium">
+                <label className="mb-2 flex items-center gap-3 text-[15px] font-medium text-white">
                   <FolderPen size={20} />
                   First Name
                 </label>
@@ -58,13 +58,13 @@ const HelpDesk = () => {
                   {...register("firstName", { required: true })}
                   type="text"
                   name="firstName"
-                  className="text-white block w-full rounded-md border bg-secondary p-2.5"
+                  className="block w-full rounded-md border bg-secondary p-2.5 text-white"
                   placeholder="first name"
                 />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <label className="text-white mb-2 flex items-center gap-3 text-[15px] font-medium">
+                <label className="mb-2 flex items-center gap-3 text-[15px] font-medium text-white">
                   <FolderPen size={20} />
                   Last Name
                 </label>
@@ -72,12 +72,12 @@ const HelpDesk = () => {
                   {...register("lastName", { required: true })}
                   type="text"
                   name="lastName"
-                  className="text-white block w-full rounded-md border bg-secondary p-2.5"
+                  className="block w-full rounded-md border bg-secondary p-2.5 text-white"
                   placeholder="last name"
                 />
               </div>
               <div className="col-span-6 sm:col-span-3">
-                <label className="text-white mb-2 flex items-center gap-3 text-[15px] font-medium">
+                <label className="mb-2 flex items-center gap-3 text-[15px] font-medium text-white">
                   <MailOpen size={20} />
                   email
                 </label>
@@ -85,12 +85,12 @@ const HelpDesk = () => {
                   {...register("email", { required: true })}
                   type="text"
                   name="email"
-                  className="text-white block w-full rounded-md border bg-secondary p-2.5"
+                  className="block w-full rounded-md border bg-secondary p-2.5 text-white"
                   placeholder="email"
                 />
               </div>
               <div className="col-span-6 sm:col-span-3">
-                <label className="text-white mb-2 flex items-center gap-3 text-[15px] font-medium">
+                <label className="mb-2 flex items-center gap-3 text-[15px] font-medium text-white">
                   <PhoneOff size={20} />
                   Number
                 </label>
@@ -98,12 +98,12 @@ const HelpDesk = () => {
                   {...register("number", { required: true })}
                   type="text"
                   name="number"
-                  className="text-white block w-full rounded-md border bg-secondary p-2.5"
+                  className="block w-full rounded-md border bg-secondary p-2.5 text-white"
                   placeholder="number"
                 />
               </div>
               <div className="col-span-full">
-                <label className="text-white mb-2 flex items-center gap-3 text-[15px] font-medium">
+                <label className="mb-2 flex items-center gap-3 text-[15px] font-medium text-white">
                   <MessageCircleMore size={22} />
                   Message
                 </label>

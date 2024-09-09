@@ -61,6 +61,7 @@ export function Faq() {
       <Accordion type="single" collapsible className="space-y-2">
         {faqs.map(({ id, question, answer }) => (
           <AccordionItem
+            key={id}
             className="rounded-2xl border bg-secondary px-4 py-1 shadow-sm"
             value={id + ""}
           >
