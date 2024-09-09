@@ -4,7 +4,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 
 export function Teachers() {
   return (
-    <section className="container grid grid-cols-4 gap-x-4 py-20">
+    <section className="container grid grid-cols-1 gap-4 py-20 sm:grid-cols-2 lg:grid-cols-4">
       {Array(4)
         .fill("")
         .map((_, i) => (
@@ -18,7 +18,7 @@ function Teacher() {
   return (
     <div className="group relative min-h-[30rem] cursor-pointer rounded-2xl border border-border/15 transition-all hover:border-border/25 hover:brightness-90">
       <Image
-        className="h-full rounded-2xl object-cover object-center"
+        className="size-full rounded-2xl object-cover object-center"
         src="/images/teacher.webp"
         alt="teacher"
         height={800}
