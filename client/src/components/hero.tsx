@@ -13,9 +13,9 @@ export function Hero() {
           The biggest language school in the world!
         </h2>
         <p className="max-w-[50ch] text-pretty px-2 leading-relaxed text-secondary-foreground">
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint cconsectetu consectet urronsectetur cupidatat. Lorem ipsum
-          dolor sit amet, qui minim.
+          For individuals, coaching can enhance leadership skills, improve
+          work-life balance, and increase confidence. Organizations also reap
+          rewards, such as higher employee engagement,
         </p>
         <div className="flex items-center gap-x-4">
           <Button size="lg">
