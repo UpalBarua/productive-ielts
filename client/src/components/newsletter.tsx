@@ -3,8 +3,8 @@ import { IconSend } from "@tabler/icons-react";
 
 export function Newsletter() {
   return (
-    <section className="container py-20">
-      <div className="relative isolate grid items-start gap-2 overflow-hidden rounded-lg border bg-secondary p-8 sm:grid-cols-2 sm:gap-x-4">
+    <div className="border-b border-t py-6">
+      <div className="container relative isolate grid items-start gap-2 overflow-hidden rounded-lg bg-secondary sm:grid-cols-2 sm:gap-x-4">
         <h2 className="text-pretty text-3xl font-extrabold tracking-tight sm:col-[1/2]">
           Newsletter
         </h2>
@@ -21,7 +21,7 @@ export function Newsletter() {
             name="email"
             type="email"
             placeholder="Enter your email"
-            className="bg-transparent size-full px-2 outline-none"
+            className="size-full bg-transparent px-2 outline-none"
           />
           <Button
             type="submit"
@@ -30,9 +30,9 @@ export function Newsletter() {
             <IconSend className="size-5 sm:size-4" />
             <span className="hidden lg:block">Subscribe</span>
           </Button>
-          <div className="absolute right-0 top-1/2 -z-10 size-[80rem] rounded-full bg-primary opacity-20 blur-2xl" />
+          {/* <div className="absolute right-0 top-1/2 -z-10 size-[80rem] rounded-full bg-primary opacity-20 blur-2xl" /> */}
         </form>
       </div>
-    </section>
+    </div>
   );
 }

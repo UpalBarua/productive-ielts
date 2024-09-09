@@ -9,13 +9,12 @@ export default function Home() {
   return (
     <div className="pt-16">
       <Hero />
-      <section className="mt-[-15%] bg-foreground pt-[20rem] text-background">
+      <section className="mt-[-15%] bg-foreground pb-20 pt-[20rem] text-background">
         <Facilities />
         <Teachers />
       </section>
-      <Newsletter />
-      <Faq />
       <Testimonials />
+      <Faq />
     </div>
   );
 }

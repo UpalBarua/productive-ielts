@@ -54,7 +54,7 @@ export const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="pb-section container">
+    <section className="container py-20">
       <h2 className="pb-6 text-center text-4xl font-extrabold capitalize tracking-tight md:text-5xl lg:pb-8">
         Hear From Our Students
       </h2>
