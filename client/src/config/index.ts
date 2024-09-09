@@ -1,22 +1,22 @@
 export const navLinks = [
   {
-    label: "Teachers",
+    label: "Course",
     href: "#",
   },
   {
-    label: "Blog",
+    label: "video",
     href: "#",
   },
   {
     label: "About Us",
-    href: "#",
+    href: "about-us",
   },
   {
     label: "Contact",
-    href: "#",
+    href: "contact-us",
   },
   {
-    label: "FAQ",
-    href: "#",
+    label: "Help-desk",
+    href: "help-desk",
   },
 ] as const;
