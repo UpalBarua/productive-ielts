@@ -43,7 +43,7 @@ export const faqs = [
 
 export function Faq() {
   return (
-    <section className="pb-section container grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+    <section className="pb-section container grid grid-cols-1 items-center gap-10 py-20 md:grid-cols-2">
       <div className="space-y-4">
         <h2 className="text-start text-4xl font-extrabold capitalize leading-[1.25] tracking-tight">
           Answers to Your Frequently Asked Questions
