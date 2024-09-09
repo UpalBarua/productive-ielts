@@ -3,15 +3,19 @@ import { Newsletter } from "@/components/newsletter";
 import { Faq } from "@/components/faq";
 import { Testimonials } from "@/components/testimonials";
 import { Teachers } from "@/components/teachers";
+import { Facilities } from "@/components/facilities";
 
 export default function Home() {
   return (
     <div className="pt-16">
-      {/* <Hero /> */}
-      <Teachers />
-      {/* <Newsletter /> */}
-      {/* <Faq /> */}
-      {/* <Testimonials /> */}
+      <Hero />
+      <section className="mt-[-15%] bg-foreground pt-[20rem] text-background">
+        <Facilities />
+        <Teachers />
+      </section>
+      <Newsletter />
+      <Faq />
+      <Testimonials />
     </div>
   );
 }

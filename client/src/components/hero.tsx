@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="container grid justify-items-center gap-y-14 py-10 text-center">
+    <div className="container grid justify-items-center gap-y-14 pt-10 text-center">
       <div className="grid max-w-2xl justify-items-center gap-y-6">
         <span className="rounded-full border bg-secondary px-3 py-1 text-sm">
           👋 Welcome to Productive IELTS
