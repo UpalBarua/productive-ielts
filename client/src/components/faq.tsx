@@ -45,7 +45,7 @@ export function Faq() {
   return (
     <section className="pb-section container grid grid-cols-1 items-center gap-10 py-20 md:grid-cols-2">
       <div className="space-y-4">
-        <h2 className="text-start text-4xl font-extrabold capitalize leading-[1.25] tracking-tight">
+        <h2 className="ld:text-5xl text-start text-4xl font-medium capitalize leading-[1.3]">
           Answers to Your Frequently Asked Questions
         </h2>
         <p className="max-w-[25rem] text-pretty pb-2 leading-relaxed text-secondary-foreground">

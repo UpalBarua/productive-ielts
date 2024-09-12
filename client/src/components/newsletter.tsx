@@ -5,7 +5,7 @@ export function Newsletter() {
   return (
     <div className="border-b border-t py-6">
       <div className="container relative isolate grid items-start gap-2 overflow-hidden rounded-lg bg-secondary sm:grid-cols-2 sm:gap-x-4">
-        <h2 className="text-pretty text-3xl font-extrabold tracking-tight sm:col-[1/2]">
+        <h2 className="text-pretty pb-2 text-4xl font-medium tracking-tight sm:col-[1/2]">
           Newsletter
         </h2>
         <p className="max-w-[40ch] pb-4 leading-relaxed text-secondary-foreground sm:col-[1/2]">

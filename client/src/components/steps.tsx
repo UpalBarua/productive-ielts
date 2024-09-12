@@ -39,11 +39,11 @@ export function Steps() {
             width="600"
             className="col-[1/span_2] size-full rounded-xl object-cover object-center group-even:order-1 group-even:col-[2/span_2]"
           />
-          <div className="absolute grid justify-end gap-y-4 rounded-xl border bg-secondary/65 p-10 backdrop-blur-xl backdrop-saturate-200 group-odd:left-1/2 group-even:right-1/2">
-            <h1 className="font-meidum text-pretty text-4xl capitalize leading-tight tracking-tight">
+          <div className="absolute grid justify-items-start gap-y-4 rounded-xl border bg-secondary/75 p-10 backdrop-blur backdrop-saturate-200 group-odd:left-1/2 group-even:right-1/2">
+            <h1 className="font-meidum text-pretty text-3xl capitalize">
               {title}
             </h1>
-            <p className="max-w-[35rem] text-pretty leading-relaxed text-secondary-foreground">
+            <p className="max-w-[50ch] text-pretty leading-relaxed text-secondary-foreground">
               {description}
             </p>
             <Link href="/" className={buttonVariants({})}>
