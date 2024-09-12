@@ -13,6 +13,8 @@ const config: Config = {
         padding: "1.25rem",
       },
       backgroundImage: {
+        "gradient-primary":
+          "linear-gradient(150deg, rgba(89,5,173,1) 47%, rgba(197,0,141,1) 89%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       colors: {
