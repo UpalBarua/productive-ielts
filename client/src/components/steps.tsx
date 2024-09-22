@@ -26,7 +26,7 @@ const steps = [
 
 export function Steps() {
   return (
-    <section className="container space-y-20 py-20">
+    <section className="space-y-20 py-20">
       {steps.map(({ title, description, img }, i) => (
         <div
           key={title + i}

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="container relative isolate my-6 mb-20 grid grid-cols-2 items-center justify-between overflow-hidden rounded-xl border bg-secondary px-0 shadow-sm">
+    <div className="relative isolate my-6 mb-20 grid grid-cols-2 items-center justify-between overflow-hidden rounded-xl border bg-secondary px-0 shadow-sm">
       <div className="grid max-w-2xl justify-items-start gap-y-6 p-8">
         <span className="rounded-full border bg-secondary/75 px-3 py-1 text-sm backdrop-blur">
           👋 Welcome to Productive IELTS
@@ -38,7 +38,7 @@ export function Hero() {
         width={900}
         className="h-full rounded-r-lg border-l object-cover object-center"
       />
-      <div className="bg-gradient-primary absolute -left-[20%] -top-[40%] -z-10 size-[40rem] animate-[spin_10s_linear_infinite] rounded-full opacity-20 blur-[5rem]" />
+      <div className="absolute -left-[20%] -top-[40%] -z-10 size-[40rem] animate-[spin_10s_linear_infinite] rounded-full bg-gradient-primary opacity-20 blur-[5rem]" />
     </div>
   );
 }

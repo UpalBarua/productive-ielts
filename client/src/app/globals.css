@@ -28,8 +28,44 @@
 }
 
 @layer base {
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    line-height: 1.1;
+  }
+
+  p,
+  li,
+  span {
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+
   * {
     @apply border-border;
     /* border: 1px solid red; */
+  }
+}
+
+@layer utilities {
+  .grid-container {
+    --padding-inline: 1.5rem;
+    --container-max-width: 70rem;
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] min(100% - (var(--padding-inline) * 2),
+        var(--container-max-width)) [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+
+    &> :not(.full-width) {
+      grid-column: content;
+    }
+
+    &>.full-width {
+      grid-column: full-width;
+    }
   }
 }

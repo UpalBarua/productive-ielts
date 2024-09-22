@@ -4,9 +4,9 @@ import { Newsletter } from "./newsletter";
 
 export function Footer() {
   return (
-    <footer className="mt-20 bg-secondary">
+    <footer className="grid-container mt-20 bg-secondary">
       <Newsletter />
-      <div className="container py-10">
+      <div className="py-10">
         <div className="items-start md:flex md:justify-between">
           <Link
             href="/"

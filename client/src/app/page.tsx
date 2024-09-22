@@ -1,16 +1,15 @@
-import { Hero } from "@/components/hero";
-import { Newsletter } from "@/components/newsletter";
-import { Faq } from "@/components/faq";
-import { Testimonials } from "@/components/testimonials";
-import { Teachers } from "@/components/teachers";
 import { Facilities } from "@/components/facilities";
+import { Faq } from "@/components/faq";
+import { Hero } from "@/components/hero";
 import { Steps } from "@/components/steps";
+import { Teachers } from "@/components/teachers";
+import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
   return (
-    <div className="pt-16">
+    <div className="grid-container pt-16">
       <Hero />
-      <section className="bg-foreground py-20 text-background">
+      <section className="full-width grid-container bg-foreground py-20 text-background">
         <Facilities />
         <Teachers />
       </section>

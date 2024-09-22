@@ -19,7 +19,7 @@ const instructors = [
 
 export function Teachers() {
   return (
-    <section className="container py-20">
+    <section className="py-20">
       <Carousel
         opts={{
           align: "start",
@@ -30,8 +30,8 @@ export function Teachers() {
             <Teacher key={instructor.name} {...instructor} />
           ))}
         </CarouselContent>
-        <CarouselPrevious className="text-foreground" />
-        <CarouselNext className="text-foreground" />
+        {/* <CarouselPrevious className="text-foreground" /> */}
+        {/* <CarouselNext className="text-foreground" /> */}
       </Carousel>
     </section>
   );

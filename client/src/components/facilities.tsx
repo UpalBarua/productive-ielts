@@ -31,7 +31,7 @@ const facilities = [
 
 export function Facilities() {
   return (
-    <section className="container pb-10">
+    <section className="pb-10">
       <ul className="grid gap-16 sm:grid-cols-2 lg:grid-cols-4">
         {facilities.map(({ title, description, icon: Icon }) => (
           <li
