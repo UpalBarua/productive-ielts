@@ -35,3 +35,56 @@ export async function uploadModuleVideo(
     next(error);
   }
 }
+
+export async function downloadModuleVideo(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const range = req.headers.range as string;
+    const { fileId } = req.params;
+
+    if (!range) {
+      res.status(400).send("Requires Range header");
+      return;
+    }
+
+    const fileMetadata = await drive.files.get({
+      fileId,
+      fields: "size, mimeType",
+    });
+
+    const videoSize = parseInt(fileMetadata.data.size ?? "0");
+    const mimeType = fileMetadata.data.mimeType ?? "video/mp4"; // Default to video/mp4 if no mimeType found
+
+    // Parse the range to figure out which part of the file to send
+    const CHUNK_SIZE = 10 ** 6; // 1MB chunk size
+    const start = Number(range.replace(/\D/g, "")); // TOOD: remove type assertion
+    const end = Math.min(start + CHUNK_SIZE, videoSize - 1);
+
+    const contentLength = end - start + 1;
+
+    // Set response headers for video streaming
+    res.writeHead(206, {
+      "Content-Range": `bytes ${start}-${end}/${videoSize}`,
+      "Accept-Ranges": "bytes",
+      "Content-Length": contentLength,
+      "Content-Type": mimeType,
+    });
+
+    // Get the file stream from Google Drive with byte range
+    const driveStream = await drive.files.get(
+      {
+        fileId,
+        alt: "media",
+      },
+      { responseType: "stream", headers: { Range: `bytes=${start}-${end}` } },
+    );
+
+    // Pipe the video file stream to the client
+    driveStream.data.pipe(res);
+  } catch (error) {
+    next(error);
+  }
+}
