@@ -12,13 +12,14 @@ import {
   IconVideo,
   IconBrandYoutube,
 } from "@tabler/icons-react";
+import { ModuleVideo } from "@/components/module-video";
 
 export default function ModulesPage() {
   return (
     <main className="grid-container pt-20">
       <div className="grid items-start gap-4 md:grid-cols-[60%_1fr]">
         <section className="rounded-xl bg-secondary p-2 shadow">
-          <div className="h-64 w-full rounded-xl bg-foreground/50 md:h-80"></div>
+          <ModuleVideo />
           <div className="flex items-center justify-end gap-4 px-2 pb-2 pt-5">
             <Button size="sm" variant="secondary">
               <IconChevronLeft className="size-4" />
