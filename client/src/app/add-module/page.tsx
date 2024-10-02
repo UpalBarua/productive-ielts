@@ -38,7 +38,7 @@ export default function AddModulePage() {
         const formData = new FormData();
         formData.append("module_video", values[value as keyof typeof values]);
 
-        return fetch("http://localhost:8080/module", {
+        return fetch("http://localhost:8080/api/module", {
           method: "POST",
           body: formData,
         });
@@ -61,7 +61,15 @@ export default function AddModulePage() {
         videos: moduleVidoes,
       };
 
-      console.log(newModule);
+      const response = await fetch("localhost:8080/api/module/new-module", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newModule),
+      });
+
+      console.log(response);
     } catch (error) {
       console.log(error);
     }

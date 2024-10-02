@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
 
-app.use("", moduleRoute);
+app.use("/api/module", moduleRoute);
 
 app.all("*", (_req: Request, res: Response) => {
   res.status(404).json({

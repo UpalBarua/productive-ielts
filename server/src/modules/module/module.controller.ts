@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import fs from "fs";
 import { v4 as uuid } from "uuid";
 import drive from "../../utils/drive";
+import Module from "./module.model";
 
 export async function uploadModuleVideo(
   req: Request,
@@ -84,6 +85,26 @@ export async function downloadModuleVideo(
 
     // Pipe the video file stream to the client
     driveStream.data.pipe(res);
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function createNewModule(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const { body } = req;
+
+    const newModule = new Module(body);
+    await newModule.save();
+
+    res.status(201).json({
+      success: true,
+      message: "new module created",
+    });
   } catch (error) {
     next(error);
   }

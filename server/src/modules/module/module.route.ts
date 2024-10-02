@@ -1,10 +1,15 @@
 import { Router } from "express";
 import upload from "../../middlewares/multer";
-import { downloadModuleVideo, uploadModuleVideo } from "./module.controller";
+import {
+  downloadModuleVideo,
+  uploadModuleVideo,
+  createNewModule,
+} from "./module.controller";
 
 const router = Router();
 
-router.get("/module/:fileId", downloadModuleVideo);
-router.post("/module", upload.single("module_video"), uploadModuleVideo);
+router.post("/new-module", createNewModule);
+router.get("/:fileId", downloadModuleVideo);
+router.post("/", upload.single("module_video"), uploadModuleVideo);
 
 export default router;
