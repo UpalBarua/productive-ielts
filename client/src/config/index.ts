@@ -5,7 +5,7 @@ export const navLinks = [
   },
   {
     label: "video",
-    href: "#",
+    href: "youtube-video",
   },
   {
     label: "About Us",
