@@ -34,3 +34,7 @@ npm-debug.log
 .env
 
 credentials.json
+
+# dist/
+
+*.tsbuildinfo
