@@ -4,7 +4,7 @@ type TModule = {
   moduleTitle: string;
   videos: {
     title: string;
-    vidoeId: string;
+    videoId: string;
   }[];
 };
 

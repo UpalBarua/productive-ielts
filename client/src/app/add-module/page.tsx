@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
+import { IconLoader2 } from "@tabler/icons-react";
 
 // TODO: add proper validations for file inputs
 const newModuleForm = z.object({
@@ -23,6 +25,8 @@ const newModuleForm = z.object({
 type TNewModuleForm = z.infer<typeof newModuleForm>;
 
 export default function AddModulePage() {
+  const [isUploading, setIsUploading] = useState(false);
+
   const form = useForm<TNewModuleForm>({
     resolver: zodResolver(newModuleForm),
     // defaultValues: {},
@@ -30,6 +34,8 @@ export default function AddModulePage() {
 
   async function onSubmit(values: TNewModuleForm) {
     try {
+      setIsUploading(true);
+
       const videoFileKeys = Object.keys(values).filter(
         (key) => values[key as keyof typeof values] instanceof File,
       );
@@ -52,31 +58,38 @@ export default function AddModulePage() {
       const moduleVidoes = data.map(({ fileId }, i) => {
         return {
           title: values[`title${i + 1}` as keyof typeof values],
-          videoUrl: fileId,
+          videoId: fileId,
         };
       });
 
       const newModule = {
-        title: values.moduleTitle,
+        moduleTitle: values.moduleTitle,
         videos: moduleVidoes,
       };
 
-      const response = await fetch("localhost:8080/api/module/new-module", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "http://localhost:8080/api/module/new-module",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newModule),
         },
-        body: JSON.stringify(newModule),
-      });
+      );
 
-      console.log(response);
+      if (response.status === 201) {
+        alert("New module added!");
+      }
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsUploading(false);
     }
   }
 
   return (
-    <main className="grid-container pt-20">
+    <main className="grid-container pt-28">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -228,6 +241,12 @@ export default function AddModulePage() {
           </div>
         </form>
       </Form>
+      {isUploading && (
+        <div className="absolute inset-0 mt-4 flex h-full flex-col items-center justify-center gap-4 bg-secondary/80 backdrop-blur">
+          <IconLoader2 className="size-[2.5rem] animate-spin" />
+          <span>Please Wait</span>
+        </div>
+      )}
     </main>
   );
 }

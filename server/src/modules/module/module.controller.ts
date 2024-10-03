@@ -109,3 +109,21 @@ export async function createNewModule(
     next(error);
   }
 }
+
+export async function getModules(
+  _req: Request,
+  res: Response,
+  next: NextFunction,
+) {
+  try {
+    const modules = await Module.find({});
+
+    res.status(200).json({
+      success: true,
+      message: "modules found",
+      data: modules,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
