@@ -11,16 +11,16 @@ const steps = [
     img: "/images/hero.webp",
   },
   {
-    title: "Partnership with Passback",
+    title: "Student Management",
     description:
       "We were at Wahab Folawiyo School, Lagos, Nigeria. JustUsedTech, in Collaboration with @passbackofficial, emphasized the importance of reuse and circular economy principles.",
-    img: "/images/hero.webp",
+    img: "/images/section (1).jpg",
   },
   {
-    title: "Partnership with Passback",
+    title: "Qualified Instructor",
     description:
       "We were at Wahab Folawiyo School, Lagos, Nigeria. JustUsedTech, in Collaboration with @passbackofficial, emphasized the importance of reuse and circular economy principles.",
-    img: "/images/hero.webp",
+    img: "/images/section (2).jpg",
   },
 ] as const;
 

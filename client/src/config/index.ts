@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     label: "Course",
-    href: "#",
+    href: "modules",
   },
   {
     label: "video",
