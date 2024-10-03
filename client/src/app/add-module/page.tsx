@@ -44,7 +44,7 @@ export default function AddModulePage() {
         const formData = new FormData();
         formData.append("module_video", values[value as keyof typeof values]);
 
-        return fetch("http://localhost:8080/api/module", {
+        return fetch("https://productive-ielts-gn18.vercel.app/api/module", {
           method: "POST",
           body: formData,
         });
@@ -68,7 +68,7 @@ export default function AddModulePage() {
       };
 
       const response = await fetch(
-        "http://localhost:8080/api/module/new-module",
+        "https://productive-ielts-gn18.vercel.app/api/module/new-module",
         {
           method: "POST",
           headers: {
