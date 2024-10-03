@@ -172,7 +172,7 @@ export default function ModulesPage() {
   }, []);
 
   return (
-    <main className="grid-container pt-20">
+    <main className="grid-container mt-8 pt-20">
       <div className="grid items-start gap-4 md:grid-cols-[60%_1fr]">
         <section className="rounded-xl bg-secondary p-2 shadow">
           <ModuleVideo currentVideoId={currentVideoId} />
