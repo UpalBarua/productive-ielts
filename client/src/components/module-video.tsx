@@ -6,6 +6,7 @@ import { IconLoader2 } from "@tabler/icons-react";
 export function ModuleVideo({ currentVideoId }: { currentVideoId: string }) {
   const [videoUrl, setVideoUrl] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const courseVideo = "/course.mp4";
 
   useEffect(() => {
     const fetchVideoStream = async () => {
@@ -33,20 +34,21 @@ export function ModuleVideo({ currentVideoId }: { currentVideoId: string }) {
 
   return (
     <div className="h-64 w-full rounded-xl md:h-80">
-      {!isLoading ? (
-        <video
-          className="size-full rounded-xl object-cover object-center"
-          crossOrigin="anonymous"
-          controls
-          autoPlay
-          src={videoUrl}
-        ></video>
-      ) : (
+      {/* {!isLoading ? ( */}
+      <video
+        className="size-full rounded-xl object-cover object-center"
+        crossOrigin="anonymous"
+        controls
+        autoPlay
+        src={courseVideo}
+        // src={courseVideo}
+      ></video>
+      {/* ) : (
         <div className="mt-4 flex h-full flex-col items-center justify-center gap-4">
           <IconLoader2 className="size-[2.5rem] animate-spin" />
           <span>Please Wait</span>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
