@@ -25,52 +25,27 @@ const modules = [
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-    ],
-  },
-  {
-    title: "Module 1: Lorem ipsum dolor sit amet, qui minim labore.",
-    vidoes: [
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
     ],
   },
@@ -80,47 +55,22 @@ const modules = [
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-    ],
-  },
-  {
-    title: "Module 1: Lorem ipsum dolor sit amet, qui minim labore.",
-    vidoes: [
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
-      },
-      {
-        title: "Module video 1: Lorem ipsum dolor sit amet.",
-        videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
     ],
   },
@@ -130,27 +80,77 @@ const modules = [
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+    ],
+  },
+  {
+    title: "Module 1: Lorem ipsum dolor sit amet, qui minim labore.",
+    vidoes: [
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
       {
         title: "Module video 1: Lorem ipsum dolor sit amet.",
         videoId:
-          "http://localhost:8080/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+    ],
+  },
+  {
+    title: "Module 1: Lorem ipsum dolor sit amet, qui minim labore.",
+    vidoes: [
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
+      },
+      {
+        title: "Module video 1: Lorem ipsum dolor sit amet.",
+        videoId:
+          "https://productive-ielts-gn18.vercel.app/module/1PlSX5mrApW-DeYMlh4uW3GYXzg460yNZ",
       },
     ],
   },
@@ -162,7 +162,9 @@ export default function ModulesPage() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:8080/api/module");
+      const response = await fetch(
+        "https://productive-ielts-gn18.vercel.app/api/module",
+      );
       const data = await response.json();
       setModules(data.data);
       setCurrentVideoId(data.data[0].videos[0].videoId);

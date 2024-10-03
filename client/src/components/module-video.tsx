@@ -9,7 +9,7 @@ export function ModuleVideo({ currentVideoId }: { currentVideoId: string }) {
 
   useEffect(() => {
     const fetchVideoStream = async () => {
-      const url = `http://localhost:8080/api/module/${currentVideoId}`;
+      const url = `https://productive-ielts-gn18.vercel.app/api/module/${currentVideoId}`;
       setIsLoading(true);
 
       try {
