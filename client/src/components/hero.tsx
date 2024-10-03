@@ -10,7 +10,8 @@ export function Hero() {
           👋 Welcome to Productive IELTS
         </span>
         <h2 className="text-pretty text-[clamp(2.75rem,_6vw+0.5rem,_3.25rem)] font-medium capitalize leading-[1.4] text-foreground/90">
-          The biggest language school in the world!
+          The biggest <span className="font-bold">language school</span> in the
+          world!
         </h2>
         <p className="max-w-[50ch] text-pretty leading-relaxed text-foreground/80">
           For individuals, coaching can enhance leadership skills, improve
@@ -32,11 +33,11 @@ export function Hero() {
         </div>
       </div>
       <Image
-        src="/images/hero2.webp"
+        src="/images/hero9.png"
         alt=""
-        height={500}
-        width={900}
-        className="h-full rounded-r-lg border-l object-cover object-center"
+        height={400}
+        width={700}
+        className="h-full rounded-r-lg object-cover object-center"
       />
       <div className="absolute -left-[20%] -top-[40%] -z-10 size-[40rem] animate-[spin_10s_linear_infinite] rounded-full bg-gradient-primary opacity-20 blur-[5rem]" />
     </div>
