@@ -1,7 +1,7 @@
 import { google } from "googleapis";
 import path from "path";
 
-const KEY_FILE_PATH = path.join("credentials.json");
+// const KEY_FILE_PATH = path.join("credentials.json");
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
 
 const googleCredentials = {
