@@ -13,9 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={raleway.className}>
       <body className="grid min-h-screen bg-background text-foreground antialiased">
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
