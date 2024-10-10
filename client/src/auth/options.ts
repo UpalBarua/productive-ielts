@@ -13,4 +13,8 @@ export const nextAuthOptions = {
       },
     }),
   ],
+  pages: {
+    newUser: "/sign-up",
+    signIn: "/sign-in",
+  },
 };

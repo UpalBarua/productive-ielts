@@ -19,6 +19,7 @@ import {
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { signIn } from "next-auth/react";
 
 // TODO: add proper validation using zod and regex.
 const signInFormSchema = z.object({
@@ -41,8 +42,21 @@ export default function SignInPage() {
     },
   });
 
-  function onSubmit(values: TSignInForm) {
-    console.log(values);
+  async function onSubmit({ email, password }: TSignInForm) {
+    try {
+      await signIn("credentials", {
+        email,
+        password,
+      });
+
+      console.log("Success");
+
+      // toast.success("Welcome!");
+      // router.replace("/");
+    } catch {
+      // toast.error("Something went wrong");
+      console.log("something went wrong");
+    }
   }
 
   return (

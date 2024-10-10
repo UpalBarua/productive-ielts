@@ -16,6 +16,7 @@ import {
   IconBrandGoogle,
   IconVocabulary,
 } from "@tabler/icons-react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -49,8 +50,33 @@ export default function SignUpPage() {
     },
   });
 
-  function onSubmit(values: TSignUpForm) {
-    console.log(values);
+  async function onSubmit({ username, email, password }: TSignUpForm) {
+    try {
+      const res = await fetch("http://localhost:8080/api/user/sign-up", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: username, email, password }),
+      }).then((res) => res.json());
+
+      if (!res.success) {
+        throw new Error(res.message);
+      }
+
+      await signIn("credentials", {
+        email,
+        password,
+      });
+
+      console.log("signed up");
+
+      // toast.success("Welcome!");
+      // router.push("/");
+    } catch {
+      console.log("something went wrong");
+      // toast.error("Something went wrong");
+    }
   }
 
   return (
