@@ -6,6 +6,7 @@ import morgan from "morgan";
 
 // routes
 import moduleRoute from "./modules/module/module.route";
+import userRoute from "./modules/user/user.route";
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use(morgan("dev"));
 app.use(helmet());
 
 app.use("/api/module", moduleRoute);
+app.use("/api/user", userRoute);
 
 app.all("*", (_req: Request, res: Response) => {
   res.status(404).json({
