@@ -21,35 +21,27 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 // TODO: add proper validation using zod and regex.
-const signUpFormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
+const signInFormSchema = z.object({
   email: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
   password: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-  confirmPassword: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
 });
 
-type TSignUpForm = z.infer<typeof signUpFormSchema>;
+type TSignInForm = z.infer<typeof signInFormSchema>;
 
-export default function SignUpPage() {
-  const form = useForm<TSignUpForm>({
-    resolver: zodResolver(signUpFormSchema),
+export default function SignInPage() {
+  const form = useForm<TSignInForm>({
+    resolver: zodResolver(signInFormSchema),
     defaultValues: {
-      username: "",
       email: "",
       password: "",
-      confirmPassword: "",
     },
   });
 
-  function onSubmit(values: TSignUpForm) {
+  function onSubmit(values: TSignInForm) {
     console.log(values);
   }
 
@@ -63,32 +55,13 @@ export default function SignUpPage() {
         <span>Productive IELTS</span>
       </Link>
       <span className="pb-8 text-center">
-        Welcome! Crete your account to get started
+        Welcome back! Sign in to get started
       </span>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="grid w-full max-w-md gap-y-4 rounded-xl border bg-secondary px-4 py-3 shadow sm:px-6 sm:py-4"
         >
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem className="relative">
-                <FormLabel className="absolute left-0 top-0 px-3 py-5">
-                  Username *
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    className="border-foreground/30 bg-transparent pb-5 pt-10"
-                    placeholder="Enter your username"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <FormField
             control={form.control}
             name="email"
@@ -128,28 +101,8 @@ export default function SignUpPage() {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem className="relative">
-                <FormLabel className="absolute left-0 top-0 px-3 py-5">
-                  Confirm Password *
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    type="password"
-                    className="border-foreground/30 bg-transparent pb-5 pt-10"
-                    placeholder="Enter your password"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <Button type="submit" size="lg">
-            Sign Up
+            Sign In
           </Button>
           <div className="flex items-center gap-x-4">
             <span className="block h-[1px] w-full bg-foreground/40" />
@@ -165,9 +118,9 @@ export default function SignUpPage() {
             Continue with facebook
           </Button>
           <div className="py-2 text-center text-sm">
-            Already have an account?{" "}
-            <Link className="text-primary" href="/sign-in">
-              Sign in
+            Don't have an account?{" "}
+            <Link className="text-primary" href="/sign-up">
+              Sign Up
             </Link>
           </div>
         </form>
