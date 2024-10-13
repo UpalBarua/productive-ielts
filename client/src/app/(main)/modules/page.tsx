@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { baseURL } from "@/config";
 import type { Module } from "@/types";
 import {
   IconBrandYoutube,
@@ -16,7 +17,7 @@ import {
   IconClock,
   IconVideo,
 } from "@tabler/icons-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const modules = [
   {
@@ -162,9 +163,7 @@ export default function ModulesPage() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        "https://productive-ielts-gn18.vercel.app/api/module",
-      );
+      const response = await fetch(`${baseURL}/module`);
       const data = await response.json();
       setModules(data.data);
       setCurrentVideoId(data.data[0].videos[0].videoId);

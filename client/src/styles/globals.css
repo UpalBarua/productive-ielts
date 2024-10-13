@@ -15,7 +15,7 @@
     --secondary: 285 100% 98%;
     --secondary-foreground: 270 12% 48%;
     --muted: 285 100% 98%;
-    --muted-foreground: 285 75% 96%;
+    --muted-foreground: 270 12% 48%;
     --accent: 285 100% 98%;
     --accent-foreground: 285 100% 5%;
     --destructive: 345 94% 40%;
@@ -59,13 +59,13 @@
     grid-template-columns:
       [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] min(100% - (var(--padding-inline) * 2),
         var(--container-max-width)) [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+  }
 
-    &> :not(.full-width) {
-      grid-column: content;
-    }
+  .grid-container> :not(.full-width) {
+    grid-column: content;
+  }
 
-    &>.full-width {
-      grid-column: full-width;
-    }
+  .grid-container>.full-width {
+    grid-column: full-width;
   }
 }

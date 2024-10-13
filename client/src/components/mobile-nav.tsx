@@ -12,7 +12,7 @@ export function MobileNav() {
           <IconMenu4 />
         </Button>
       </SheetTrigger>
-      <SheetContent className="bg-secondary/75 px-10 pt-16 text-lg backdrop-blur">
+      <SheetContent className="bg-secondary/75 px-10 pt-16 text-lg backdrop-blur sm:slide-in-from-left">
         <nav className="grid gap-6">
           {navLinks.map(({ label, href }) => (
             <Link key={href} href={href}>

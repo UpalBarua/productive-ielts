@@ -35,6 +35,6 @@ npm-debug.log
 
 credentials.json
 
-# dist/
+dist/
 
 *.tsbuildinfo
