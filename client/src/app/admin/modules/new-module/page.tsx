@@ -3,49 +3,77 @@
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { baseURL } from "@/config";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { IconLoader2, IconTrash } from "@tabler/icons-react";
 import { useState } from "react";
-import { IconLoader2 } from "@tabler/icons-react";
+import { useFieldArray, useForm } from "react-hook-form";
+import { z } from "zod";
 
 // TODO: add proper validations for file inputs
+const moduleVideoSchema = z.object({
+  title: z.string(),
+  video: z.instanceof(File),
+});
+
 const newModuleForm = z.object({
   moduleTitle: z.string(),
-  title1: z.string(),
-  video1: z.instanceof(File),
-  title2: z.string(),
-  video2: z.instanceof(File),
-  title3: z.string(),
-  video3: z.instanceof(File),
-  title4: z.string(),
-  video4: z.instanceof(File),
+  moduleVideos: z.array(moduleVideoSchema),
 });
 
 type TNewModuleForm = z.infer<typeof newModuleForm>;
 
 export default function NewModulePage() {
-  const [videoCount, setVideoCount] = useState(4);
   const [isUploading, setIsUploading] = useState(false);
 
   const form = useForm<TNewModuleForm>({
     resolver: zodResolver(newModuleForm),
-    // defaultValues: {},
+    defaultValues: {
+      moduleTitle: "",
+      moduleVideos: [
+        {
+          title: "",
+          video: new File(["foo"], "foo.txt", {
+            type: "text/plain",
+          }),
+        },
+        {
+          title: "",
+          video: new File(["foo"], "foo.txt", {
+            type: "text/plain",
+          }),
+        },
+
+        {
+          title: "",
+          video: new File(["foo"], "foo.txt", {
+            type: "text/plain",
+          }),
+        },
+        {
+          title: "",
+          video: new File(["foo"], "foo.txt", {
+            type: "text/plain",
+          }),
+        },
+      ],
+    },
   });
 
-  async function onSubmit(values: TNewModuleForm) {
+  const { fields, append, remove } = useFieldArray({
+    name: "moduleVideos",
+    control: form.control,
+  });
+
+  async function onSubmit({ moduleTitle, moduleVideos }: TNewModuleForm) {
     try {
       setIsUploading(true);
 
-      const videoFileKeys = Object.keys(values).filter(
-        (key) => values[key as keyof typeof values] instanceof File,
-      );
-
-      const promises = videoFileKeys.map((value) => {
+      const promises = moduleVideos.map(({ video }) => {
         const formData = new FormData();
-        formData.append("module_video", values[value as keyof typeof values]);
+        formData.append("module_video", video);
 
-        return fetch("https://productive-ielts-gn18.vercel.app/api/module", {
+        return fetch(`${baseURL}/module`, {
           method: "POST",
           body: formData,
         });
@@ -58,26 +86,23 @@ export default function NewModulePage() {
 
       const moduleVidoes = data.map(({ fileId }, i) => {
         return {
-          title: values[`title${i + 1}` as keyof typeof values],
+          title: moduleVideos[i].title,
           videoId: fileId,
         };
       });
 
       const newModule = {
-        moduleTitle: values.moduleTitle,
+        moduleTitle: moduleTitle,
         videos: moduleVidoes,
       };
 
-      const response = await fetch(
-        "https://productive-ielts-gn18.vercel.app/api/module/new-module",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newModule),
+      const response = await fetch(`${baseURL}/module/new-module`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(newModule),
+      });
 
       if (response.status === 201) {
         alert("New module added!");
@@ -91,6 +116,18 @@ export default function NewModulePage() {
 
   return (
     <main className="grid-container py-20 md:py-6">
+      <button
+        onClick={() =>
+          append({
+            title: "",
+            video: new File(["foo"], "foo.txt", {
+              type: "text/plain",
+            }),
+          })
+        }
+      >
+        ADD MODULE
+      </button>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -120,130 +157,52 @@ export default function NewModulePage() {
               Publish
             </Button>
           </div>
-          <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 font-medium">Module Video 1</h3>
-            <FormField
-              control={form.control}
-              name="title1"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input {...field} type="text" placeholder="shadcn" />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="video1"
-              render={({ field: { value, onChange, ...filedProps } }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...filedProps}
-                      type="file"
-                      placeholder="shadcn"
-                      onChange={(event) => onChange(event?.target?.files?.[0])}
-                      className="h-auto"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 font-medium">Module Video 2</h3>
-            <FormField
-              control={form.control}
-              name="title2"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input {...field} type="text" placeholder="shadcn" />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="video2"
-              render={({ field: { value, onChange, ...filedProps } }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...filedProps}
-                      type="file"
-                      placeholder="shadcn"
-                      onChange={(event) => onChange(event?.target?.files?.[0])}
-                      className="h-auto"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 font-medium">Module Video 3</h3>
-            <FormField
-              control={form.control}
-              name="title3"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input {...field} type="text" placeholder="shadcn" />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="video3"
-              render={({ field: { value, onChange, ...filedProps } }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...filedProps}
-                      type="file"
-                      placeholder="shadcn"
-                      onChange={(event) => onChange(event?.target?.files?.[0])}
-                      className="h-auto"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 font-medium">Module Video 4</h3>
-            <FormField
-              control={form.control}
-              name="title4"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input {...field} type="text" placeholder="shadcn" />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="video4"
-              render={({ field: { value, onChange, ...filedProps } }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...filedProps}
-                      type="file"
-                      placeholder="shadcn"
-                      onChange={(event) => onChange(event?.target?.files?.[0])}
-                      className="h-auto"
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-          </div>
+          {fields.map((item, index) => (
+            <div
+              key={item.id}
+              className="space-y-3 rounded-2xl border bg-secondary p-5"
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="pb-2 font-medium">Module Video {index + 1}</h3>
+                <button
+                  className="text-destructive"
+                  onClick={() => remove(index)}
+                >
+                  <IconTrash className="size-5" />
+                </button>
+              </div>
+              <FormField
+                control={form.control}
+                name={`moduleVideos.${index}.title`}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input {...field} type="text" placeholder="shadcn" />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name={`moduleVideos.${index}.video`}
+                render={({ field: { value, onChange, ...filedProps } }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        {...filedProps}
+                        type="file"
+                        placeholder="add a video title"
+                        onChange={(event) =>
+                          onChange(event?.target?.files?.[0])
+                        }
+                        className="h-auto"
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+            </div>
+          ))}
         </form>
       </Form>
       {isUploading && (
