@@ -20,6 +20,7 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { baseURL } from "@/config";
 
 // TODO: add proper validation using zod and regex.
 const signUpFormSchema = z.object({
@@ -52,7 +53,7 @@ export default function SignUpPage() {
 
   async function onSubmit({ username, email, password }: TSignUpForm) {
     try {
-      const res = await fetch("http://localhost:8080/api/user/sign-up", {
+      const res = await fetch(`${baseURL}/user/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

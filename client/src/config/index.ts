@@ -1,3 +1,6 @@
+export const baseURL = "http://localhost:8080/api";
+import { IconBlockquote, IconMovie, IconUsers } from "@tabler/icons-react";
+
 export const navLinks = [
   {
     label: "Course",
@@ -18,5 +21,23 @@ export const navLinks = [
   {
     label: "Help-desk",
     href: "help-desk",
+  },
+] as const;
+
+export const adminNavLinks = [
+  {
+    href: "/modules",
+    icon: IconMovie,
+    label: "Modules",
+  },
+  {
+    href: "/students",
+    icon: IconUsers,
+    label: "Students",
+  },
+  {
+    href: "/blog",
+    icon: IconBlockquote,
+    label: "Blog",
   },
 ] as const;

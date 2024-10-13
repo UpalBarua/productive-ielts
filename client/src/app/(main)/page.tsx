@@ -4,8 +4,13 @@ import { Hero } from "@/components/hero";
 import { Steps } from "@/components/steps";
 import { Teachers } from "@/components/teachers";
 import { Testimonials } from "@/components/testimonials";
+import { auth } from "@/auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
+  console.log(session);
+
   return (
     <div className="grid-container pt-16">
       <Hero />
