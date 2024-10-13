@@ -24,7 +24,8 @@ const newModuleForm = z.object({
 
 type TNewModuleForm = z.infer<typeof newModuleForm>;
 
-export default function AddModulePage() {
+export default function NewModulePage() {
+  const [videoCount, setVideoCount] = useState(4);
   const [isUploading, setIsUploading] = useState(false);
 
   const form = useForm<TNewModuleForm>({
@@ -89,7 +90,7 @@ export default function AddModulePage() {
   }
 
   return (
-    <main className="grid-container pt-28">
+    <main className="grid-container py-20 md:py-6">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -106,7 +107,7 @@ export default function AddModulePage() {
                       {...field}
                       type="text"
                       defaultValue="Module Title"
-                      className="max-w-max text-3xl font-bold"
+                      className="text-2xl font-medium"
                     />
                   </FormControl>
                 </FormItem>
@@ -120,7 +121,7 @@ export default function AddModulePage() {
             </Button>
           </div>
           <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 text-xl font-medium">Module Video 1</h3>
+            <h3 className="pb-2 font-medium">Module Video 1</h3>
             <FormField
               control={form.control}
               name="title1"
@@ -143,6 +144,7 @@ export default function AddModulePage() {
                       type="file"
                       placeholder="shadcn"
                       onChange={(event) => onChange(event?.target?.files?.[0])}
+                      className="h-auto"
                     />
                   </FormControl>
                 </FormItem>
@@ -150,7 +152,7 @@ export default function AddModulePage() {
             />
           </div>
           <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 text-xl font-medium">Module Video 2</h3>
+            <h3 className="pb-2 font-medium">Module Video 2</h3>
             <FormField
               control={form.control}
               name="title2"
@@ -173,6 +175,7 @@ export default function AddModulePage() {
                       type="file"
                       placeholder="shadcn"
                       onChange={(event) => onChange(event?.target?.files?.[0])}
+                      className="h-auto"
                     />
                   </FormControl>
                 </FormItem>
@@ -180,7 +183,7 @@ export default function AddModulePage() {
             />
           </div>
           <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 text-xl font-medium">Module Video 3</h3>
+            <h3 className="pb-2 font-medium">Module Video 3</h3>
             <FormField
               control={form.control}
               name="title3"
@@ -203,6 +206,7 @@ export default function AddModulePage() {
                       type="file"
                       placeholder="shadcn"
                       onChange={(event) => onChange(event?.target?.files?.[0])}
+                      className="h-auto"
                     />
                   </FormControl>
                 </FormItem>
@@ -210,7 +214,7 @@ export default function AddModulePage() {
             />
           </div>
           <div className="space-y-3 rounded-2xl border bg-secondary p-5">
-            <h3 className="pb-2 text-xl font-medium">Module Video 4</h3>
+            <h3 className="pb-2 font-medium">Module Video 4</h3>
             <FormField
               control={form.control}
               name="title4"
@@ -233,6 +237,7 @@ export default function AddModulePage() {
                       type="file"
                       placeholder="shadcn"
                       onChange={(event) => onChange(event?.target?.files?.[0])}
+                      className="h-auto"
                     />
                   </FormControl>
                 </FormItem>

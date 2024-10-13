@@ -26,7 +26,7 @@ export const navLinks = [
 
 export const adminNavLinks = [
   {
-    href: "/modules",
+    href: "/admin/modules",
     icon: IconMovie,
     label: "Modules",
   },
