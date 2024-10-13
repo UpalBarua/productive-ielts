@@ -132,7 +132,7 @@ export default function SignInPage() {
             Continue with facebook
           </Button>
           <div className="py-2 text-center text-sm">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link className="text-primary" href="/sign-up">
               Sign Up
             </Link>
