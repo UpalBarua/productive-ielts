@@ -18,6 +18,7 @@ import {
   IconVideo,
 } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
+import { Quiz } from "@/components/quiz";
 
 const modules = [
   {
@@ -171,22 +172,23 @@ export default function ModulesPage() {
   }, []);
 
   return (
-    <main className="grid-container mt-8 pt-20">
+    <main className="grid-container mt-8 pt-12">
       <div className="grid items-start gap-4 md:grid-cols-[60%_1fr]">
-        <section className="rounded-xl bg-secondary p-2 shadow">
-          <ModuleVideo currentVideoId={currentVideoId} />
-          <div className="flex items-center justify-end gap-4 px-2 pb-2 pt-5">
-            <Button size="sm" variant="secondary">
-              <IconChevronLeft className="size-4" />
-              <span>Previous</span>
-            </Button>
-            <Button size="sm">
-              <span>Next</span>
-              <IconChevronRight className="size-4" />
-            </Button>
-          </div>
-        </section>
-        <aside className="">
+        {/* <section className="rounded-xl bg-secondary p-2 shadow"> */}
+        {/*           <ModuleVideo currentVideoId={currentVideoId} /> */}
+        {/*           <div className="flex items-center justify-end gap-4 px-2 pb-2 pt-5"> */}
+        {/*             <Button size="sm" variant="secondary"> */}
+        {/*               <IconChevronLeft className="size-4" /> */}
+        {/*               <span>Previous</span> */}
+        {/*             </Button> */}
+        {/*             <Button size="sm"> */}
+        {/*               <span>Next</span> */}
+        {/*               <IconChevronRight className="size-4" /> */}
+        {/*             </Button> */}
+        {/*           </div> */}
+        {/*         </section> */}
+        <Quiz />
+        <aside>
           <Accordion className="space-y-4" type="multiple">
             {modules &&
               modules.map(({ moduleTitle, videos, _id }) => (
