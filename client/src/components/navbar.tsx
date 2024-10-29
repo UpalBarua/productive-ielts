@@ -1,7 +1,8 @@
 import { MobileNav } from "@/components/mobile-nav";
 import { navLinks } from "@/config";
-import { IconVocabulary } from "@tabler/icons-react";
+import { IconLogin, IconVocabulary } from "@tabler/icons-react";
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 export function Navbar() {
   return (
@@ -16,11 +17,15 @@ export function Navbar() {
             <Link
               key={href}
               href={href}
-              className="transition-colors duration-300 hover:text-secondary-foreground focus-visible:text-secondary-foreground"
+              className="capitalize transition-colors duration-300 hover:text-secondary-foreground focus-visible:text-secondary-foreground"
             >
               {label}
             </Link>
           ))}
+          <Link href="/sign-in" className={buttonVariants({})}>
+            <IconLogin className="size-5" />
+            <span>Sign In</span>
+          </Link>
         </nav>
         <MobileNav />
       </div>
