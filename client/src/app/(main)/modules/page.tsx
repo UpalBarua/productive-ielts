@@ -237,7 +237,7 @@ export default function ModulesPage() {
                       </div>
                     ))}
                     <div
-                      className="flex cursor-pointer items-center gap-2 py-4"
+                      className="flex cursor-pointer items-center gap-2 py-4 font-bold text-primary"
                       onClick={() => setIsQuizDisplayed(true)}
                     >
                       <IconHelpHexagon className="size-4 text-secondary-foreground" />
