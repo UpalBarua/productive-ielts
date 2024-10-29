@@ -289,6 +289,7 @@ export default function NewModulePage() {
                     .fill("")
                     .map((_, i) => (
                       <FormField
+                        key={i}
                         control={form.control}
                         name={`quiz.${index}.options.${i}`}
                         render={({ field }) => (

@@ -22,6 +22,23 @@ const moduleSchema = new mongoose_1.default.Schema({
             },
         },
     ],
+    quiz: [
+        {
+            question: {
+                type: String,
+                required: true,
+            },
+            options: [
+                {
+                    type: String,
+                    required: true,
+                },
+            ],
+            correctAnswer: {
+                type: String,
+            },
+        },
+    ],
 });
 exports.default = mongoose_1.default.model("Module", moduleSchema);
 //# sourceMappingURL=module.model.js.map

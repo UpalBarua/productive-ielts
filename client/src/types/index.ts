@@ -11,5 +11,5 @@ export type Module = {
     title: string;
     videoId: string;
   }[];
-  quiz: Quiz;
+  quiz: Quiz[];
 };
