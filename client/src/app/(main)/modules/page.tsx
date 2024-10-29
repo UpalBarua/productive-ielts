@@ -180,7 +180,7 @@ export default function ModulesPage() {
     <main className="grid-container mt-8 pt-12">
       <div className="grid items-start gap-4 md:grid-cols-[60%_1fr]">
         {isQuizDisplayed ? (
-          <Quiz quiz={modules[0].quiz} />
+          <Quiz quiz={modules[1].quiz} />
         ) : (
           <section className="rounded-xl bg-secondary p-2 shadow">
             <ModuleVideo currentVideoId={currentVideoId} />

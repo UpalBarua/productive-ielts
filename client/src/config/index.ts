@@ -1,7 +1,7 @@
 import { IconBlockquote, IconMovie, IconUsers } from "@tabler/icons-react";
 
-export const baseURL = "http://localhost:8080/api";
-// export const baseURL = "https://productive-ielts.onrender.com/api";
+// export const baseURL = "http://localhost:8080/api";
+export const baseURL = "https://productive-ielts.onrender.com/api";
 
 export const navLinks = [
   {
