@@ -10,6 +10,7 @@ import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import type { Quiz } from "@/types";
 
 // TODO: do proper validation
 const answersSchema = z.object({
@@ -22,46 +23,50 @@ const answersSchema = z.object({
 
 type AnswersSchema = z.infer<typeof answersSchema>;
 
-const quiz = [
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-  {
-    question:
-      "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
-    options: ["Option One", "Option Two", "Option Three", "Option Four"],
-    correctAnswer: "Option One",
-  },
-] as const;
+// const quiz = [
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+//   {
+//     question:
+//       "This is a smaple question for the quiz functionality? Lorem ipsum dolor sit. Lorem, ipsum.",
+//     options: ["Option One", "Option Two", "Option Three", "Option Four"],
+//     correctAnswer: "Option One",
+//   },
+// ] as const;
 
-export function Quiz() {
+type QuizProps = {
+  quiz: Quiz[];
+};
+
+export function Quiz({ quiz }: Readonly<QuizProps>) {
   const ref = useRef<HTMLFormElement | null>(null);
 
   const form = useForm<AnswersSchema>({

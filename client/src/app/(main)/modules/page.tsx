@@ -1,6 +1,7 @@
 "use client";
 
 import { ModuleVideo } from "@/components/module-video";
+import { Quiz } from "@/components/quiz";
 import {
   Accordion,
   AccordionContent,
@@ -15,10 +16,11 @@ import {
   IconChevronLeft,
   IconChevronRight,
   IconClock,
+  IconHelpHexagon,
   IconVideo,
 } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
-import { Quiz } from "@/components/quiz";
+import { cn } from "@/lib/utils";
 
 const modules = [
   {
@@ -161,11 +163,14 @@ const modules = [
 export default function ModulesPage() {
   const [modules, setModules] = useState<Module[]>([]);
   const [currentVideoId, setCurrentVideoId] = useState("");
+  const [isQuizDisplayed, setIsQuizDisplayed] = useState(false);
 
   useEffect(() => {
     (async () => {
       const response = await fetch(`${baseURL}/module`);
       const data = await response.json();
+
+      console.log(data.data);
       setModules(data.data);
       setCurrentVideoId(data.data[0].videos[0].videoId);
     })();
@@ -174,24 +179,27 @@ export default function ModulesPage() {
   return (
     <main className="grid-container mt-8 pt-12">
       <div className="grid items-start gap-4 md:grid-cols-[60%_1fr]">
-        {/* <section className="rounded-xl bg-secondary p-2 shadow"> */}
-        {/*           <ModuleVideo currentVideoId={currentVideoId} /> */}
-        {/*           <div className="flex items-center justify-end gap-4 px-2 pb-2 pt-5"> */}
-        {/*             <Button size="sm" variant="secondary"> */}
-        {/*               <IconChevronLeft className="size-4" /> */}
-        {/*               <span>Previous</span> */}
-        {/*             </Button> */}
-        {/*             <Button size="sm"> */}
-        {/*               <span>Next</span> */}
-        {/*               <IconChevronRight className="size-4" /> */}
-        {/*             </Button> */}
-        {/*           </div> */}
-        {/*         </section> */}
-        <Quiz />
+        {isQuizDisplayed ? (
+          <Quiz quiz={modules[0].quiz} />
+        ) : (
+          <section className="rounded-xl bg-secondary p-2 shadow">
+            <ModuleVideo currentVideoId={currentVideoId} />
+            <div className="flex items-center justify-end gap-4 px-2 pb-2 pt-5">
+              <Button size="sm" variant="secondary">
+                <IconChevronLeft className="size-4" />
+                <span>Previous</span>
+              </Button>
+              <Button size="sm">
+                <span>Next</span>
+                <IconChevronRight className="size-4" />
+              </Button>
+            </div>
+          </section>
+        )}
         <aside>
           <Accordion className="space-y-4" type="multiple">
             {modules &&
-              modules.map(({ moduleTitle, videos, _id }) => (
+              modules.map(({ _id, moduleTitle, videos }) => (
                 <AccordionItem
                   key={_id}
                   className="rounded-xl bg-secondary px-5 py-4 shadow"
@@ -216,13 +224,25 @@ export default function ModulesPage() {
                     {videos.map(({ title, videoId }) => (
                       <div
                         key={videoId}
-                        className="flex cursor-pointer items-center gap-2 py-4"
+                        className={cn(
+                          "flex cursor-pointer items-center gap-2 py-4",
+                          {
+                            "text-primary": videoId === currentVideoId,
+                          },
+                        )}
                         onClick={() => setCurrentVideoId(videoId)}
                       >
                         <IconBrandYoutube className="size-4 text-secondary-foreground" />
                         <span>{title}</span>
                       </div>
                     ))}
+                    <div
+                      className="flex cursor-pointer items-center gap-2 py-4"
+                      onClick={() => setIsQuizDisplayed(true)}
+                    >
+                      <IconHelpHexagon className="size-4 text-secondary-foreground" />
+                      <span>Module Quiz</span>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
